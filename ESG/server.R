@@ -63,13 +63,13 @@ server <- shinyServer(function(input, output) {
       rename(`Employee Age`= age_simulated, Industry = industry, `GHG Emissions/Employee (tonnes)` = ghg_kilotonnes_per_employee_simulated, `Female Board Members (%)` = pct_women_simulated, ID = id, Geography=geo)
     
     
-  }) # end tbl output
+  }) # End tbl output
   
   
   
   output$distPlot <- renderPlot({
     
-    # draw the histogram with the specified number of bins
+    # Generate histograms with the specified number of bins
     
     if(input$submit_user_response == 0){
       
@@ -79,7 +79,7 @@ server <- shinyServer(function(input, output) {
       vcolours <- c("#5675D6", "#428953", "#CE2929")
       
     ggplot() +
-      geom_histogram(data = chart_data(), aes(x=value, fill=name), binwidth = 1) +
+      geom_histogram(data = chart_data(), aes(x=value, fill=name), binwidth = 1, color = "black", alpha = 0.5) +
       xlab("Value") + ylab("Counts") +
       facet_wrap(~name, ncol = 1, scales = "free" , labeller = labeller(name = names_labs)) +
       theme_minimal()+
@@ -108,7 +108,7 @@ server <- shinyServer(function(input, output) {
       vcolours <- c("#5675D6", "#428953", "#CE2929")
       
       ggplot() +
-        geom_histogram(data = chart_data(), aes(x=value, fill=name),  binwidth = 1) +
+        geom_histogram(data = chart_data(), aes(x=value, fill=name),  binwidth = 1, color = "black", alpha = 0.7) +
         geom_vline(data=responses_chart_data,
                    aes(xintercept=value), col="black", size=1, linetype=2) +
         facet_wrap(~name, ncol = 1, scales = "free" , labeller = labeller(name = names_labs)) +
@@ -122,18 +122,14 @@ server <- shinyServer(function(input, output) {
         theme(legend.position="none") +
         ggtitle("How do you measure up?")
       
-      
-      
     }
   })
   
-  # observeEvent(input$submit_user_response, {
-  # 
-  #   output$text <- renderText({ "Responses saved. Thank you." })
-  # 
-  #   })
   
-# saving values
+# Save user data
+# No csv file is created for the Shinylive app
+# When run as a standard Shiny app locally or on an R server, the write.csv
+# can be uncommented to save users' data in a specified location.
   
   observeEvent(input$submit_user_response, {
     tbl_for_saving$output_data <- tbl_for_saving$output_data %>% 
@@ -150,6 +146,4 @@ server <- shinyServer(function(input, output) {
     output$text <- renderText({ "Responses saved. Thank you." })
   })
   
-  
-
-}) # end server
+}) # End server

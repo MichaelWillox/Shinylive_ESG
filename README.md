@@ -11,7 +11,7 @@ greenhouse gas (GHG) emissions per employee; and a governance indicator, the per
 
 Users can enter their specific information in the fields on the left, including the following:
 
- - Province,
+ - Province or territory,
  - Industry,
  - A unique business ID,
  - The total amount of greenhouse gas emissions per year is
@@ -19,7 +19,8 @@ Users can enter their specific information in the fields on the left, including 
  - Number of board members, and
  - Number of female board members.
  
- As an illustrative example, a user might choose
+ As an illustrative example, users are encouraged to test the app with the values
+ below or choose their own. 
 
  - Alberta,
  - Mining and oil an gas extraction

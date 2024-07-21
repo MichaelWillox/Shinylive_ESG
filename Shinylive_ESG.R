@@ -11,4 +11,4 @@ library(httpuv)
 shinylive::export("ESG", "docs")
 
 ## Run the following in an R session to serve the app:
-httpuv::runStaticServer("docs", port=7446)
+httpuv::runStaticServer("docs")
