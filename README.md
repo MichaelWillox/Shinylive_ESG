@@ -7,7 +7,7 @@ This prototype ESG tool was developed using synthetic (fictional) data to demons
 There are many standards or frameworks relating to ESG. This is a challenge, as there are no common standards that have emerged yet. The Global Reporting Initiative (GRI), the Sustainability Accounting Standards Board (SASB), the United Nations Global Compact (UNGC), and the Sustainable Development Goals (SDG) are some of the most common frameworks used by enterprises to report on their ESG performance. 
 
 This tool shows three examples of basic ESG indicators: a social indicator, employee age; an environmental indicator, 
-greenhouse gas (GHG) emissions per employee; and a governance indicator, the percentage of board members.
+greenhouse gas (GHG) emissions per employee; and a governance indicator, the percentage of female board members.
 
 Users can enter their specific information in the fields on the left, including the following:
 
